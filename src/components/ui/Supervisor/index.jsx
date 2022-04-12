@@ -1,4 +1,4 @@
-import { Col, Form, Row, Select } from "antd";
+import { Col, Form, Input, Row, Select } from "antd";
 import "./Supervisor.style.scss";
 const { Option } = Select;
 
@@ -44,6 +44,14 @@ const Supervisor = () => {
                 <Option value="Bangladesh">Bangladesh</Option>
                 <Option value="India">India</Option>
               </Select>
+            </Form.Item>
+
+            <Form.Item
+              label="Supervisor Report"
+              name="supervisorReport"
+              rules={[{ required: true, message: "" }]}
+            >
+              <Input placeholder="Reports" />
             </Form.Item>
           </Col>
           <Col lg={12} xl={12} xxl={12}>

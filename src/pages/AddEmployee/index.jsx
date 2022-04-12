@@ -1,6 +1,7 @@
 import { Button, message, Steps } from "antd";
 import { useState } from "react";
 import BasicInformation from "../../components/ui/BasicInformation";
+import BiographicalInfo from "../../components/ui/BiographicalInfo";
 import PositionalInfo from "../../components/ui/PositionalInfo";
 import Supervisor from "../../components/ui/Supervisor";
 import "./AddEmployee.style.scss";
@@ -26,7 +27,7 @@ const steps = [
   },
   {
     title: "Biographical Info",
-    content: "Biographical Info",
+    content: <BiographicalInfo />,
   },
   {
     title: "Additional Address",
