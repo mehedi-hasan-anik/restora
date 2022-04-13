@@ -4,6 +4,7 @@ import AdditionalAdress from "../../components/ui/AdditionalAdress";
 import BasicInformation from "../../components/ui/BasicInformation";
 import Benefits from "../../components/ui/Benefits";
 import BiographicalInfo from "../../components/ui/BiographicalInfo";
+import Custom from "../../components/ui/Custom";
 import EmergencyContact from "../../components/ui/EmergencyContact";
 import PositionalInfo from "../../components/ui/PositionalInfo";
 import Supervisor from "../../components/ui/Supervisor";
@@ -42,7 +43,7 @@ const steps = [
   },
   {
     title: "Custom",
-    content: "Custom",
+    content: <Custom />,
   },
 ];
 
