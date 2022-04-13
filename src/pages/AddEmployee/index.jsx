@@ -2,6 +2,7 @@ import { Button, message, Steps } from "antd";
 import { useState } from "react";
 import AdditionalAdress from "../../components/ui/AdditionalAdress";
 import BasicInformation from "../../components/ui/BasicInformation";
+import Benefits from "../../components/ui/Benefits";
 import BiographicalInfo from "../../components/ui/BiographicalInfo";
 import EmergencyContact from "../../components/ui/EmergencyContact";
 import PositionalInfo from "../../components/ui/PositionalInfo";
@@ -21,7 +22,7 @@ const steps = [
   },
   {
     title: "Benefits",
-    content: "Benefits",
+    content: <Benefits />,
   },
   {
     title: "Supervisor",
