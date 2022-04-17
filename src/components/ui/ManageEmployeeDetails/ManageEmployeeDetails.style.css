@@ -1,0 +1,16 @@
+.details-list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.details-list li {
+  padding: 10px;
+  border-bottom: 1px solid #e4e5e7;
+}
+.dtr-title {
+  font-weight: 700;
+}
+.action-btn {
+  padding: 0px 10px;
+  font-size: 20px;
+}

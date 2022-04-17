@@ -20,13 +20,10 @@ const Benefits = () => {
   return (
     <div className="benefits-wrapper">
       <Form
-        name="basic"
-        initialValues={{ remember: true }}
+        name="dynamic_form_nest_item"
         onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        layout="vertical"
         autoComplete="off"
-        className="static-form"
+        layout="vertical"
       >
         <Row gutter={20}>
           <Col lg={11} xl={11} xxl={11}>
@@ -79,14 +76,6 @@ const Benefits = () => {
 
           <Col lg={2} xl={2} xxl={2}></Col>
         </Row>
-      </Form>
-
-      <Form
-        name="dynamic_form_nest_item"
-        onFinish={onFinish}
-        autoComplete="off"
-        layout="vertical"
-      >
         <Form.List name="users">
           {(fields, { add, remove }) => (
             <>

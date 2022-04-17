@@ -6,6 +6,7 @@ import Designation from "./pages/Designation";
 import FinancialYear from "./pages/FinancialYear";
 import Home from "./pages/Home";
 import JournalVoucher from "./pages/JournalVoucher";
+import ManageEmployee from "./pages/ManageEmployee";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="journal-voucher" element={<JournalVoucher />} />
         <Route path="designation" element={<Designation />} />
         <Route path="add-employee" element={<AddEmployee />} />
+        <Route path="manage-employee" element={<ManageEmployee />} />
       </Routes>
     </div>
   );
