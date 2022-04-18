@@ -1,4 +1,4 @@
-import { Button, message, Steps } from "antd";
+import { Button, Form, message, Steps } from "antd";
 import { useState } from "react";
 import AdditionalAdress from "../../components/ui/AdditionalAdress";
 import BasicInformation from "../../components/ui/BasicInformation";
@@ -50,6 +50,14 @@ const steps = [
 const AddEmployee = () => {
   const [current, setCurrent] = useState(0);
 
+  const onFinish = (values: any) => {
+    console.log("Success:", values);
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log("Failed:", errorInfo);
+  };
+
   const next = () => {
     setCurrent(current + 1);
   };
@@ -59,34 +67,44 @@ const AddEmployee = () => {
   };
   return (
     <div className="add-employee-wrapper">
-      <Steps current={current}>
-        {steps.map((item) => (
-          <Step key={item.title} title={item.title} />
-        ))}
-      </Steps>
-      <div className="steps-content">{steps[current].content}</div>
-      <div className="steps-action">
-        {current > 0 && (
-          <Button style={{ margin: "0 8px" }} onClick={() => prev()}>
-            Previous
-          </Button>
-        )}
+      <Form
+        name="basic"
+        initialValues={{ remember: true }}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+        layout="vertical"
+        autoComplete="off"
+      >
+        <Steps current={current}>
+          {steps.map((item) => (
+            <Step key={item.title} title={item.title} />
+          ))}
+        </Steps>
+        <div className="steps-content">{steps[current].content}</div>
+        <div className="steps-action">
+          {current > 0 && (
+            <Button style={{ margin: "0 8px" }} onClick={() => prev()}>
+              Previous
+            </Button>
+          )}
 
-        {current === steps.length - 1 && (
-          <Button
-            type="primary"
-            onClick={() => message.success("Processing complete!")}
-          >
-            Done
-          </Button>
-        )}
+          {current === steps.length - 1 && (
+            <Button
+              type="primary"
+              htmlType="submit"
+              onClick={() => message.success("Processing complete!")}
+            >
+              Done
+            </Button>
+          )}
 
-        {current < steps.length - 1 && (
-          <Button type="primary" onClick={() => next()}>
-            Next
-          </Button>
-        )}
-      </div>
+          {current < steps.length - 1 && (
+            <Button type="primary" onClick={() => next()}>
+              Next
+            </Button>
+          )}
+        </div>
+      </Form>
     </div>
   );
 };

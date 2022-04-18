@@ -7,6 +7,7 @@ import FinancialYear from "./pages/FinancialYear";
 import Home from "./pages/Home";
 import JournalVoucher from "./pages/JournalVoucher";
 import ManageEmployee from "./pages/ManageEmployee";
+import ManageEmployeeSalary from "./pages/ManageEmployeeSalary";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
         <Route path="designation" element={<Designation />} />
         <Route path="add-employee" element={<AddEmployee />} />
         <Route path="manage-employee" element={<ManageEmployee />} />
+        <Route
+          path="manage-employee-salary"
+          element={<ManageEmployeeSalary />}
+        />
       </Routes>
     </div>
   );
